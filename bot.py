@@ -14,6 +14,7 @@ def read_missions():
     with open("missions.txt","r") as f:
         lines = [i.strip() for i in f]
         return lines
+
 missions = read_missions()
 
 # Discord API calls begin here
