@@ -34,7 +34,7 @@ async def on_message(message):
             # Shuffle missions every time !risk is called
             random.shuffle(missions)
             
-            # Get list of players present in the risk voice channel
+            # Get list of players present in the risk voice channel [Replace this with your own channel ID]
             risk_channel = client.get_channel(703786517302214737)
             members = risk_channel.members
             players = []
