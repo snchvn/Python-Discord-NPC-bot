@@ -1,10 +1,12 @@
 import discord
 import random
+import os
+
 
 # Mission giver Discord bot. Randomly allocates pre-written mission scripts to members of voice channel.
 
-# Read your Discord Bot's connecting token from token.txt [INSERT BOT TOKEN IN THIS FILE]
-token = ***REMOVED***
+# Read your Discord Bot's connecting token from Heroku config vars
+access_token = os.environ["ACCESS_TOKEN"]
 
 # Read the missions.txt file with all the different missions [INSERT MISSION PARAMETERS IN THIS FILE]
 def read_missions():
@@ -52,4 +54,4 @@ async def on_message(message):
 
             await message.channel.send("Mission orders have been issued.")
 
-client.run(token)
+client.run(access_token)
