@@ -1,2 +1,2 @@
 # Python Discord Risk bot
- A simple python bot that privately serves missions to the members of any specified channel.
+ A simple python bot that randomly allocates prewritten missions/tasks to members of any Discord server channel.
