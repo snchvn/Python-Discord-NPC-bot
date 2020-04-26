@@ -41,6 +41,7 @@ async def on_message(message):
             for member in members:
                 players.append(str(member.id))
 
+            # Exit clause when script is invoked with no players
             if len(players)==0:
                 await message.channel.send("Mission abort. There are no players on the Risk voice channel.")
             
