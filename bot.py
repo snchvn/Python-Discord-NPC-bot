@@ -40,18 +40,22 @@ async def on_message(message):
             players = []
             for member in members:
                 players.append(str(member.id))
-            
-            # Allocate missions to players
-            for i in range(0,len(players)):
-                
-                # Get the user element from the iterable player ID (STUCK HERE FOR 2 HOURS PASSING INTEGER AS STRING)
-                user = discord.utils.get(client.get_all_members(), id=int(players[i]))
-                
-                # Compose message for each user allocating their respective mission
-                messageContent = ("<@" + str(players[i]) + "> your mission is to " + missions[i])
-                #Send a DM to the player
-                await user.send(messageContent)
 
-            await message.channel.send("Mission orders have been issued.")
+            if len(players)==0:
+                await message.channel.send("Mission abort. There are no players on the Risk voice channel.")
+            
+            else:
+                # Allocate missions to players
+                for i in range(0,len(players)):
+                    
+                    # Get the user element from the iterable player ID (GOT STUCK HERE FOR 2 HOURS PASSING INTEGER AS STRING)
+                    player = discord.utils.get(client.get_all_members(), id=int(players[i]))
+                    
+                    # Compose message for each player allocating their respective mission
+                    messageContent = ("<@" + str(players[i]) + "> your mission is to " + missions[i])
+                    #Send a DM to each player
+                    await player.send(messageContent)
+
+                await message.channel.send("Mission orders issued successfully.")
 
 client.run(access_token)
