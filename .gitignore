@@ -353,4 +353,4 @@ MigrationBackup/
 .ionide/
 
 # Bot token
-token.txt
+#token.txt
