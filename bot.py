@@ -4,11 +4,7 @@ import random
 # Mission giver Discord bot. Randomly allocates pre-written mission scripts to members of voice channel.
 
 # Read your Discord Bot's connecting token from token.txt [INSERT BOT TOKEN IN THIS FILE]
-def read_token():
-    with open("token.txt","r") as f:
-        lines = f.readlines()
-        return lines[0].strip()
-token = read_token()
+token = AUTH_TOKEN
 
 # Read the missions.txt file with all the different missions [INSERT MISSION PARAMETERS IN THIS FILE]
 def read_missions():
