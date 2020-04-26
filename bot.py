@@ -52,7 +52,7 @@ async def on_message(message):
                     messageContent = ("<@" + str(players[i+1]) + "> your mission is to " + missions[i])
                     await user.send(messageContent)
                     print(messageContent)
-                user = discord.utils.get(client.get_all_members(), id=305136156087943179)
+                user = discord.utils.get(client.get_all_members(), id=305136156087943179) # DIRECT USER ID IS WORKING BUT NOT players[i] VARIABLE.
                 messageContent = ("<@" + str(players[0]) + "> your mission is to " + missions[0])
                 print(messageContent)
                 await user.send(messageContent)
