@@ -37,14 +37,18 @@ async def on_message(message):
             # Get list of players present in the risk voice channel [Replace this with your own channel ID]
             risk_channel = client.get_channel(703786517302214737)
             members = risk_channel.members
+            
+            # Generate a list of player IDs
             players = []
             for member in members:
                 players.append(str(member.id))
+            
             # Allocate missions to players
             for i in range(0,len(players)):
                 
                 # Get the user element from the iterable player ID (STUCK HERE FOR 2 HOURS PASSING INTEGER AS STRING)
                 user = discord.utils.get(client.get_all_members(), id=int(players[i]))
+                
                 # Compose message for each user allocating their respective mission
                 messageContent = ("<@" + str(players[i]) + "> your mission is to " + missions[i])
                 #Send a DM to the player
