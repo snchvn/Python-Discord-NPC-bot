@@ -1,2 +1,2 @@
-# Python Discord Risk bot
- A simple python bot that privately serves missions to the members of a voice channel.
+# Python Discord NPC mission giver bot
+ A simple python bot that allocates missions/tasks to members of any Discord server channel.
