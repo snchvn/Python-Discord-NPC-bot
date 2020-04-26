@@ -23,7 +23,7 @@ async def on_message(message):
    # Use below code to define mission invocation by user role
    # valid_users = ["$ROLES"]
    # if str(message.channel) in channels and str(message.author) in valid_users:
-    channels = ["bot-test"]
+    channels = ["bot-commands"]
     if str(message.channel) in channels:   
         
         # Setting the !risk command
