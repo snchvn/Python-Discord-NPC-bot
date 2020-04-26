@@ -7,6 +7,7 @@ import os
 
 # Read your Discord Bot's connecting token from Heroku config vars
 access_token = os.environ["ACCESS_TOKEN"]
+channel_id = os.environ["CHANNEL_ID"]
 
 # Read the missions.txt file with all the different missions [INSERT MISSION PARAMETERS IN THIS FILE]
 def read_missions():
@@ -33,7 +34,7 @@ async def on_message(message):
             random.shuffle(missions)
             
             # Get list of players present in the risk voice channel [Replace this with your own channel ID]
-            risk_channel = client.get_channel(703786517302214737)
+            risk_channel = client.get_channel(int(channel_id))
             members = risk_channel.members
             
             # Generate a list of player IDs
